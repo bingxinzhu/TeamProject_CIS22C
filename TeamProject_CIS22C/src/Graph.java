@@ -187,6 +187,47 @@ public class Graph<E>
    }
 
 
+
+// bingxin zhu comment here.
+
+
+/*
+for the depthFirstTraversal, I dont' know if we should use Stack since professor said using the algorithm in the Lesson 11. 
+So I write a Stack version for this. I guess you guys can take a look at this and we will discuss later.
+
+    public void depthFirstTraversalHelper(Vertex<E> startVertex, Visitor<E> visitor)
+    {
+        // YOU COMPLETE THIS (USE THE ALGORITHM GIVEN FOR LESSON 11 EXERCISE)
+        LinkedStack<Vertex<E>> vertexLinkedStack = new LinkedStack<>();
+        E startData = startVertex.getData();
+
+        startVertex.visit();;
+        visitor.visit(startData);
+        vertexLinkedStack.push(startVertex);
+        while (!vertexLinkedStack.isEmpty())
+        {
+            Vertex<E> nextVertex = vertexLinkedStack.peek();
+            Iterator<Map.Entry<E, Pair<Vertex<E>, Double>>> iterator = nextVertex.iterator();
+
+            Entry<E, Pair<Vertex<E>,Double>> nextEntry = iterator.next();
+            if(nextEntry!=null)
+            {
+                Vertex<E> neighborVertex = nextEntry.getValue().first;
+                if(!neighborVertex.isVisited())
+                {
+                    vertexLinkedStack.push(neighborVertex);
+                    neighborVertex.visit();
+                    visitor.visit(neighborVertex.getData());
+                }
+
+            }
+            else {
+                vertexLinkedStack.pop();
+            }
+        }
+    }
+*/
+
    // WRITE THE INSTANCE METHOD HERE TO
    //         WRITE THE GRAPH's vertices and its
    //         adjacency list TO A TEXT FILE (SUGGEST TO PASS AN
